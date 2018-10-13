@@ -50,4 +50,32 @@ class Home extends CI_Controller {
 		$this->load->view('index',$data);
 
 	}
+
+	public function Aboutpage(){
+		$data = array(); 
+
+		$this->load->model('Siteinfo_model'); 
+
+		//$data['sizeinfo'] = $this->load->model->getsiteinfo_by_id($data); 
+		$data['siteinfo'] = $this->Siteinfo_model->getsiteinfo_by_id($data);
+		/*------------------------------------------------------------------*/
+		$data['header'] = $this->load->view('included/header.php',$data); 
+		$data['slider'] = $this->load->view('included/slider.php',$data); 
+		$data['service'] = $this->load->view('included/service.php',$data); 
+		$data['driver'] = $this->load->view('included/driver.php',$data); 
+		$data['driver'] = $this->load->view('included/about.php',$data); 
+		$data['driver'] = $this->load->view('included/team.php',$data); 
+
+		$data['driver'] = $this->load->view('included/newsletter.php',$data); 
+		$data['driver'] = $this->load->view('included/pricing.php',$data); 
+
+		$data['driver'] = $this->load->view('included/portfolio.php',$data); 
+		
+		
+
+		$data['driver'] = $this->load->view('included/footer.php',$data); 
+		/*------------------------------------------------------------------*/
+		$this->load->view('index',$data);
+
+	}
 }
